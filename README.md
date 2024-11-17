@@ -2,6 +2,10 @@
 
 Pause or resume the torrents so that mover can move files
 
+When you make use of the unRAID cache drive for your qBittorrent's download directory, and the torrents in qBittorrent are still seeding, the mover can't move files since they are still in use.
+
+This project provides a python script that can pause and resume torrents if their directories are in the cache, and a user script to automatically modify the mover file to use the python script.
+
 
 
 ## usage
@@ -17,9 +21,9 @@ Pause or resume the torrents so that mover can move files
    deactivate
    ```
 
-3. download `qbit_manager.py` to `/mnt/user/appdata/qbit_mover/qbit_manager.py`
+3. download `qbit_manager.py` to `/mnt/user/appdata/qbit_mover/qbit_manager.py` 
 
-4. add new user script `qbit_mover`
+4. add new user script `qbit_mover`, and make it run `At Startup of Array` 
 
    ```bash
    #!/bin/bash
@@ -31,4 +35,8 @@ Pause or resume the torrents so that mover can move files
    ```
 
    
+
+## ref
+
+https://trash-guides.info/Downloaders/qBittorrent/Tips/How-to-run-the-unRaid-mover-for-qBittorrent/#python-venv
 
