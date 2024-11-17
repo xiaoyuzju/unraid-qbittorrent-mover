@@ -24,9 +24,9 @@ Pause or resume the torrents so that mover can move files
    ```bash
    #!/bin/bash
    
-   grep -q 'mode pause' /usr/local/sbin/mover || sed -ik -e '/mover: started/{' -e 'a \ \ /mnt/user/appdata/qbit_mover/venv/bin/python /mnt/user/appdata/qbit_mover/qbit_manager.py --mode pause --host http://[IP]:[PORT] --username [user] --password [passwd] --container-mapping [/media:/mnt/cache/media] --used-percentage-threshold 75' -e '}' /usr/local/sbin/mover
+   grep -q 'mode pause' /usr/local/sbin/mover || sed -ik -e '/mover: started/{' -e 'a \ \ /mnt/user/appdata/qbit_mover/venv/bin/python /mnt/user/appdata/qbit_mover/qbit_manager.py --mode pause --host http://[IP]:[PORT] --username [user] --password [passwd] --container-mapping [/media:/mnt/cache/media] --used-percentage-threshold [75]' -e '}' /usr/local/sbin/mover
    
-   grep -q 'mode resume' /usr/local/sbin/mover || sed -ik -e '/mover: started/{' -e 'a \ \ /mnt/user/appdata/qbit_mover/venv/bin/python /mnt/user/appdata/qbit_mover/qbit_manager.py --mode resume --host http://[IP]:[PORT] --username [user] --password [passwd] --container-mapping [/media:/mnt/cache/media] --used-percentage-threshold 75' -e '}' /usr/local/sbin/mover
+   grep -q 'mode resume' /usr/local/sbin/mover || sed -i -e '/mover: started/{' -e 'a \ \ /mnt/user/appdata/qbit_mover/venv/bin/python /mnt/user/appdata/qbit_mover/qbit_manager.py --mode resume --host http://[IP]:[PORT] --username [user] --password [passwd] --container-mapping [/media:/mnt/cache/media] --used-percentage-threshold [75]' -e '}' /usr/local/sbin/mover
    
    ```
 
