@@ -36,5 +36,5 @@ This project provides a python script that can pause and resume torrents if thei
 
 ## ref
 
-https://trash-guides.info/Downloaders/qBittorrent/Tips/How-to-run-the-unRaid-mover-for-qBittorrent/#python-venv
+https://trash-guides.info/Downloaders/qBittorrent/Tips/How-to-run-the-unRaid-mover-for-qBittorrent
 
