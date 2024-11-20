@@ -63,7 +63,6 @@ class QbitManager:
             json.dump(torrent_hash_list, f)
 
     def resume_torrents(self):
-        assert self.json_path.exists(), "Torrent hash list not found"
         with open(self.json_path, "r") as f:
             torrent_hash_list = json.load(f)
 
@@ -141,7 +140,8 @@ def main():
         else:
             print(f"Cache usage is below {args.used_percentage_threshold}%")
     elif args.mode == "resume":
-        qbit.resume_torrents()
+        if qbit.json_path.exists():
+            qbit.resume_torrents()
     else:
         print(f"Invalid mode: {args.mode}")
         sys.exit(1)
